@@ -1,52 +1,26 @@
 import React from "react";
-import { ReactNode } from "react";
+
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 import {
   Box,
   Flex,
-  Avatar,
-  Link,
   Button,
   Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
   useColorMode,
-  Center,
   HStack,
   IconButton,
-  InputGroup,
-  InputLeftAddon,
-  Input,
-  InputLeftElement,
 } from "@chakra-ui/react";
-import {
-  AddIcon,
-  AtSignIcon,
-  BellIcon,
-  ChatIcon,
-  CloseIcon,
-  HamburgerIcon,
-  MoonIcon,
-  PlusSquareIcon,
-  Search2Icon,
-  SunIcon,
-} from "@chakra-ui/icons";
+import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import User_Auth from "./User_Auth";
 
-
-
 const Links = [
-  { url: "profile", title: "Profile" },
-  { url: "message", title: "Message" },
-  { url: "all_user", title: "All User" },
-
+  { url: "newCars", title: "New Cars" },
+  { url: "secondHandCars", title: "Second Hand Cars" },
 
 ];
 
@@ -68,7 +42,9 @@ function Navbar() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <NavLink to="/">
-              <Box mr={100}><img src="https://attryb.com/assets/attrybNavLog.svg" alt="" /></Box>
+              <Box mr={100}>
+                <img src="https://attryb.com/assets/attrybNavLog.svg" alt="" />
+              </Box>
             </NavLink>
             <HStack
               as={"nav"}
@@ -77,24 +53,15 @@ function Navbar() {
               // border='1px' borderColor='gray.200'
               ml={50}
             >
-           
-
               <NavLink to="/newCars">
-             <Button>New Cars</Button>
-              </NavLink>
-              
-              <NavLink to="/secondHandCars">
-                <Button >Second Hand Cars</Button>
+                <Button>New Cars</Button>
               </NavLink>
 
+              <NavLink to="/secondHandCars">
+                <Button>Second Hand Cars</Button>
+              </NavLink>
             </HStack>
           </HStack>
-
-        
-
-             
-
-
 
           <Flex alignItems={"center"}>
             <Button mr={4} onClick={toggleColorMode}>
