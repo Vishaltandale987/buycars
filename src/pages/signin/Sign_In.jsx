@@ -95,6 +95,7 @@ function Sign_In() {
               <Input
                 type="email"
                 name="email"
+                placeholder="Dealer email - dealer1@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -105,6 +106,7 @@ function Sign_In() {
               <Input
                 type="password"
                 name="password"
+                placeholder=" Dealer password - dealer1"
                 value={formData.password}
                 onChange={handleChange}
                 required
