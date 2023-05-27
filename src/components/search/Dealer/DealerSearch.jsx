@@ -46,7 +46,7 @@ function DealerSearch() {
           <ModalCloseButton />
           <ModalBody>
             <Input
-              placeholder={"Year Model"}
+              placeholder={"Search car name"}
               type="text"
               onChange={(e) => setQ(e.target.value)}
               required
