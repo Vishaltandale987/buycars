@@ -1,0 +1,22 @@
+#secondcarInventrys {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* background-color: 	#f5f5dc; */
+}
+
+#secondcarssInventry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+.edit_delete {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 20px;
+  padding: 20px;
+}

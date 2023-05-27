@@ -12,6 +12,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -24,39 +25,41 @@ const initState = {
 function Sign_In() {
   const [formData, setFormData] = useState(initState);
   const navigate = useNavigate();
+  const toast = useToast();
 
-  // const dispatch = useDispatch();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  console.log("formData", formData);
+  // console.log("formData", formData);
 
   const handle_login_submiting_from = async () => {
     try {
       let res = await axios.post(`https://serverside-qga2.vercel.app/user/login`, formData);
 
-      alert(res.data.massege);
+      // alert(res.data.massege);
+      toast({
+        position: "top",
+        title: `You are Successfully login as a ${res.data.role}.`,
+        // description: "done",
+        status: "success",
+        duration: 4000,
+        isClosable: false,
+      });
       
       localStorage.setItem('id',res.data.userID)
+      localStorage.setItem('role',res.data.role)
 
-      if (formData.email === "OEMHonda@gmail.com") {
-        setTimeout(() => {
-          navigate("/newCars");
-        }, 2000);
-      }else if(formData.email === "dealer1@gmail.com" || formData.email === "dealer2@gmail.com"){
-        setTimeout(() => {
-          navigate("/secondHandCars");
-        }, 2000);
-      }
-      
-      else {
+     
         setTimeout(() => {
           navigate("/");
         }, 2000);
-      }
+     
+      
+     
     } catch (err) {
       console.log(err);
     }

@@ -41,59 +41,16 @@ function SecondHandCarSinglePage() {
     get_data_by_id();
   }, []);
 
-  let id = localStorage.getItem("id");
 
 
-  const handle_delete_car = async () => {
 
-    try {
-
-        if( id === "646f274d5e49494745f215e4"){
-
-            const res = await axios.delete(`https://serverside-qga2.vercel.app/dealers/${post_Id}`);
-            alert("Post has been delete")
-            window.location.reload(false);
-
-          
-            
-        }else{
-            alert("Only dealers have access to delete")
-        }
-      } catch (error) {
-        console.log(error);
-      }
-  }
+ 
 
 
   return (
     <div className="singlediv">
 
-        <div style={{
-            display: "flex"
-          
-        }}>
-
-      {id === "646f274d5e49494745f215e4" ? (
-          <EditIcon onClick={onOpen}
-          style={{
-              marginLeft: "20px",
-              marginBottom:"30px",
-              marginTop:'20px'
-            }}
-            />
-            ) : null}
-
-      {id === "646f274d5e49494745f215e4" ? (
-          <DeleteIcon onClick={handle_delete_car}
-          style={{
-            marginLeft: "20px",
-            marginBottom:"30px",
-            marginTop:'20px',
-            
-            }}
-            />
-            ) : null}
-            </div>
+     
 
       <img
         src={post?.img}

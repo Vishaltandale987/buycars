@@ -60,6 +60,11 @@ function Navbar() {
               <NavLink to="/secondHandCars">
                 <Button>Second Hand Cars</Button>
               </NavLink>
+
+              <NavLink to="/dealeradmin">
+                <Button>Dealer Admin Panel</Button>
+              </NavLink>
+
             </HStack>
           </HStack>
 

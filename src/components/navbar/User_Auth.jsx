@@ -20,22 +20,19 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { StarIcon } from '@chakra-ui/icons';
 import axios from 'axios';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { authlogout } from '../redux/userAuth/auth.actions';
+import { AiOutlineUser } from 'react-icons/ai';
+
 
 
 function User_Auth() {
-//   const { data, loading, error } = useSelector((store) => store.userMangerdata);
+
 
   const [userdata, setuserdata] = useState()
 
 
-    // const [isAuthenticated, setisAuthenticated] =React.useState(true)
-    // const [response, setresponse] =React.useState()
   const size = "45px";
   const color = "teal";
   const navigate = useNavigate();
-//   const dispatch = useDispatch();
 
 
   
@@ -97,6 +94,7 @@ function User_Auth() {
 
     const handleLogout = () => {
       localStorage.removeItem("id");
+      localStorage.removeItem("role");
       window.location.reload()
     }
 
@@ -104,7 +102,9 @@ function User_Auth() {
     <div>
       {!isAuthenticated ? (
        <Link to="/userLogin">
-       <StarIcon className="icon" />
+       {/* <StarIcon className="icon" /> */}
+        <AiOutlineUser/>
+
      </Link>
        
       ) : null}
@@ -120,7 +120,7 @@ function User_Auth() {
                 w="full"
                 overflow="hidden"
               >
-                {/* Ideally, only the box should be used. The <Flex /> is used to style the preview. */}
+          
                 <Box
                   as="div"
                   position="relative"

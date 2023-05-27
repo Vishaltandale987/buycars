@@ -25,7 +25,7 @@ const initState = {
   price: Number,
 };
 
-function SecondHandCarSubmitform() {
+function SecondHandCarSubmitform({close}) {
   const [image, setimage] = useState("");
   const [formData, setFormData] = useState(initState);
 
@@ -65,8 +65,10 @@ function SecondHandCarSubmitform() {
   };
   // let dealer_id = localStorage.getItem("id");
 
-  if (formData.img !== "" && formData.dealer_Id !== "") {
+  if (formData.img !== "") {
     handle_post_submiting_from();
+    setFormData(initState)
+    close()
   }
 
   return (
@@ -218,7 +220,7 @@ function SecondHandCarSubmitform() {
             className="shareButton"
             onClick={image_file_post_to_cloudinary_get_image_deploylink}
           >
-            Post
+            Submit
           </button>
         </div>
       </div>

@@ -87,11 +87,7 @@ function Second_Hand_Cars() {
 
       <div className="filter"> 
 
-{
-  id === "646f274d5e49494745f215e4" ?
-  
-  <Button onClick={onOpen}>Add car</Button> : null
-}
+
 
 <Select placeholder='Color' w='400' name="colour" onChange={handle_paint_Change}>
 <option value='all'>All</option>

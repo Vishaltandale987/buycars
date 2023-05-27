@@ -22,34 +22,13 @@ const initState = {
   price: Number,
 };
 
-function  Editfrom() {
+function  Editfrom({post_Id}) {
   const [image, setimage] = useState("");
   const [formData, setFormData] = useState(initState);
 
-  // console.log(formData);
 
-  // cloudinaty && post
 
-  const image_file_post_to_cloudinary_get_image_deploylink = async () => {
-    const data = new FormData();
-    data.append("file", image);
-    data.append("upload_preset", "ml_default");
-    data.append("cloud_name", "dd9cmhunr");
 
-    fetch("https://api.cloudinary.com/v1_1/dd9cmhunr/image/upload", {
-      method: "POST",
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setFormData({ ...formData, img: data.url });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  // Post request FE to DealersModel
 
 
 
@@ -65,7 +44,7 @@ function  Editfrom() {
   const handle_post_submiting_from = async () => {
     try {
       let res = await axios.put(
-        `https://serverside-qga2.vercel.app/dealers/${Second_hand_car_id}`,
+        `https://serverside-qga2.vercel.app/dealers/${post_Id}`,
         result
       );
       console.log(res);
@@ -84,15 +63,7 @@ function  Editfrom() {
           <div className="shareBottom">
             <div className="shareOptions">
               <label htmlFor="file" className="shareOption">
-                {/* <AddIcon mr={2} className="shareIcon" /> */}
-                {/* <span className="shareOptionText">Photo or Video</span> */}
-                {/* <input
-                  style={{ display: "none" }}
-                  type="file"
-                  id="file"
-                  // accept=".png,.jpeg,.jpg"
-                  onChange={(e) => setimage(e.target.files[0])}
-                /> */}
+          
               </label>
               {image && (
                 <div className="shareImgContainer">
@@ -211,19 +182,10 @@ function  Editfrom() {
             }
             required
           />
-          {/* <textarea
-            id="w3review"
-            name="w3review"
-            rows="10"
-            cols="50"
-            placeholder="Enter description and use full stop ( . ) after every point"
-            onChange={(e) =>
-              setFormData({ ...formData, description: e.target.value })
-            }
-          ></textarea> */}
+          
 
           <button className="shareButton" onClick={handle_post_submiting_from}>
-            Post
+            Submit
           </button>
         </div>
       </div>
