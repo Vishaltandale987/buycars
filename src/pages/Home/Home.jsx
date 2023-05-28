@@ -34,9 +34,8 @@ function Home() {
     getSecondHandCar();
   }, []);
 
-  console.log("new_car", new_car);
 
-  console.log("second_hand_car", second_hand_car);
+
   return (
     <div id="main_div">
 

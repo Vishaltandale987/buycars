@@ -31,7 +31,7 @@ function Second_Hand_Cars() {
 
 
 
-  console.log(selectedPaintValue)
+  // console.log(selectedPaintValue)
 
   // console.log("secondcardata", secondcardata);
   // get post

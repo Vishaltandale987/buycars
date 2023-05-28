@@ -48,7 +48,7 @@ function Sign_Up() {
         "https://serverside-qga2.vercel.app/user/register",
         formData
       );
-        console.log(res.data.message)
+    
         if(res.data.message === "Registered Successfully"){
           toast({
             position: "top",
@@ -70,7 +70,7 @@ function Sign_Up() {
           });
         }
 
-      console.log(res.data);
+     
     } catch (err) {
       console.log(err);
     }
