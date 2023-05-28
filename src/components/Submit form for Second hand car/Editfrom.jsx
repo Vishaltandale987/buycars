@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Input } from "@chakra-ui/react";
+import { FormLabel, Input, Text } from "@chakra-ui/react";
 import axios from "axios";
 import { AddIcon, CloseIcon } from "@chakra-ui/icons";
 import "./CarSubmitform.css";
@@ -87,6 +87,9 @@ function  Editfrom({post_Id}) {
         <hr className="shareHr" />
 
         <div className="input_form">
+
+  
+
           <Input
             placeholder={"Model Name"}
             type="text"

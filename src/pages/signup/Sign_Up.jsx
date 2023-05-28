@@ -48,16 +48,27 @@ function Sign_Up() {
         "https://serverside-qga2.vercel.app/user/register",
         formData
       );
-
-      toast({
-        position: "top",
-        title: "You are Successfully created your account",
-        // description: "done",
-        status: "success",
-        duration: 4000,
-        isClosable: false,
-      });
-      navigate("/userLogin");
+        console.log(res.data.message)
+        if(res.data.message === "Registered Successfully"){
+          toast({
+            position: "top",
+            title: "Registered Successfully",
+            // description: "done",
+            status: "success",
+            duration: 4000,
+            isClosable: false,
+          });
+          navigate("/userLogin");
+        }else if(res.data.message === "This Email is already registered"){
+          toast({
+            position: "top",
+            title: "This Email is already registered",
+            // description: "done",
+            status: "success",
+            duration: 4000,
+            isClosable: false,
+          });
+        }
 
       console.log(res.data);
     } catch (err) {
