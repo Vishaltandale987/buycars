@@ -57,7 +57,7 @@ function SecondHandCarInventry({ data }) {
         </p>
         <p className="text">
          
-         <b> Model Price - {data.price} Lack</b>
+         <b> Model Price - {data.price} </b>
        </p>
     
 
